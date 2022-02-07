@@ -1,0 +1,59 @@
+.login-div {
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #282c34;
+  padding: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.login-form label {
+  float: left;
+  color: white;
+}
+
+.login-form input {
+  position: relative;
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.forgot-password {
+  float: right;
+  font-size: xx-small;
+  color: white;
+  text-decoration: none;
+}
+
+.submit-button {
+  width: 100%;
+  border-radius: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.sign-up {
+  color: white;
+  text-decoration: none;
+}
+
+.remember-me-label {
+  font-size: xx-small;
+  float: left;
+  color: white;
+}
+
+.remember-me-div {
+  height: 20px
+}
+
+.remember-me-checkbox {
+  margin: 0px 3px 3px 3px;
+  width: 10px !important;
+  float: left;
+}

@@ -1,0 +1,19 @@
+.project-div {
+    border-radius: 20px;
+    position: absolute;
+    top: 150px;
+    left: 10%;
+    background-color: #282c34;
+    padding: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 80%;
+}
+
+.project-div p {
+    color: white;
+}
+
+.project-div a {
+    color: white;
+}

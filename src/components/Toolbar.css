@@ -1,0 +1,38 @@
+.Toolbar {
+  width: 100%;
+  background-color: #282c34;
+  overflow: auto;
+}
+
+.Toolbar a {
+  cursor: pointer;
+  float: left;
+  text-align: center;
+  width: calc((95% / 4) - 0.25%);
+  padding: 1% 0;
+  /* transition: all 0.3s ease; */
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.Toolbar img {
+  float: left;
+  width: 4%;
+  padding: 0 1%;
+}
+
+.user-popout-container {
+  background-color: #14161a;
+  border: black;
+  width: 10%;
+  position: fixed;
+  right: 3%;
+  top: 60px;
+  z-index: 10;
+}
+
+.user-popout-container button {
+  width: 100%;
+  height: 50px;
+}

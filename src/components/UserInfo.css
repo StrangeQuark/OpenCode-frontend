@@ -1,0 +1,18 @@
+.request-div {
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #282c34;
+  padding: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.request-div p {
+  color: white;
+}
+
+.request-div a {
+  color: white;
+}
