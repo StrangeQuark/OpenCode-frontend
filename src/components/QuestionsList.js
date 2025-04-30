@@ -57,9 +57,6 @@ export default class QuestionsList extends React.Component {
         var arr = [...data]
 
         this.setState({questions: data, loading: false, questionsLength: data.length, displayedQuestions: arr.splice(0,5)})
-
-        //Initialize the first button to be highlighted, since click on the home page will always load the first page of the questionList
-        document.getElementById('pagination-button-1').style.color = 'green'
     }
 
     click(item, numOfPaginationButtons) {
@@ -77,12 +74,6 @@ export default class QuestionsList extends React.Component {
         }
 
         this.setState({displayedQuestions: tempArray})
-
-        for(var i = 1; i <= numOfPaginationButtons; i++) {
-            document.getElementById('pagination-button-' + i).style.color = "white"
-        }
-
-        document.getElementById('pagination-button-' + item).style.color = 'green'
     }
 
     render() {
@@ -132,9 +123,24 @@ export default class QuestionsList extends React.Component {
             <ul className={isUserPage ? 'pagination-user' : 'pagination'}>
                 <li><button className="no-background-button" onClick={() => {(this.state.currentPage === 1) ? this.click(this.state.currentPage, numOfPaginationButtons) : this.click(this.state.currentPage - 1, numOfPaginationButtons)}}>{'<'}</button></li>
                 { this.state.loading ? <li></li> : 
-                    Object.values(this.state.questions).map((obj,index) => (
-                        (index % ITEMS_PER_PAGE === 0) && <li><button id={"pagination-button-" + (1 + index/ITEMS_PER_PAGE)} className="no-background-button" onClick={() => {this.click(1 + index/ITEMS_PER_PAGE, numOfPaginationButtons)}}>{1 + index/ITEMS_PER_PAGE}</button></li>
-                    ))
+                    Object.values(this.state.questions).map((obj,index) => {
+                        if (index % ITEMS_PER_PAGE === 0) {
+                            const pageNum = 1 + index/ITEMS_PER_PAGE;
+                            return (
+                                <li key={pageNum}>
+                                    <button
+                                        id={"pagination-button-" + pageNum}
+                                        className="no-background-button"
+                                        onClick={() => {this.click(pageNum, numOfPaginationButtons)}}
+                                        style={{ color: this.state.currentPage === pageNum ? 'green' : 'white' }}
+                                    >
+                                        {pageNum}
+                                    </button>
+                                </li>
+                            )
+                        }
+                        return null;
+                    })
                 }
                 <li><button className="no-background-button" onClick={() => {(this.state.currentPage === numOfPaginationButtons) ? this.click(this.state.currentPage, numOfPaginationButtons) : this.click(this.state.currentPage + 1, numOfPaginationButtons)}}>{">"}</button></li>
             </ul>
