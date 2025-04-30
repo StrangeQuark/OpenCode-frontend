@@ -72,7 +72,7 @@ function UserInfo(props) {
             <div style={{backgroundColor: "#282c34", color: "white", marginLeft: "20%", width:"100%", display: "flex", flexDirection: "column"}}>
                 <div>
                     <h1 style={{float: "left", marginLeft: "3%"}}>{props.postId}</h1>
-                    <button id="edit-button" hidden="true" style={{float:"right", margin:"10px"}}>Edit profile</button>
+                    <button id="edit-button" hidden={true} style={{float:"right", margin:"10px"}}>Edit profile</button>
                 </div>
                 <div>
                     <canvas id="canvas" style={{float: "left", marginLeft: "3%"}}></canvas>

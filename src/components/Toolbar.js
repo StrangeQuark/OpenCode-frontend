@@ -35,7 +35,7 @@ function Toolbar() {
             <a href="/projects">Projects</a>
             <a href="/about">About</a>
             { (username === null) ? <a href="/login">Login</a> : <a onClick={displayPopout}>{username}</a> }
-            <div id='user-popout-container' className="user-popout-container" hidden="true">
+            <div id='user-popout-container' className="user-popout-container" hidden={true}>
                 <button onClick={() => {navigateToUserProfile()}}>Profile</button>
                 <button>Settings</button>
                 <button onClick={() => {logout()}}>Logout</button>

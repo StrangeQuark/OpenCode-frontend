@@ -110,12 +110,12 @@ export default class UserSignUpForm extends React.Component {
                 <div id="signup-div" className="signup-div">
                     <h1 style={{color: "white"}}>Sign up</h1>
                     <div style={{height: "50px"}} >
-                        <b id="username-already-taken-message" hidden="true" style={{color: "red"}}>Username already taken</b>
-                        <b id="email-already-taken-message" hidden="true" style={{color: "red"}}>Email already taken</b>
-                        <b id="no-username-message" hidden="true" style={{color: "red"}}>You must enter a username</b>
-                        <b id="no-email-message" hidden="true" style={{color: "red"}}>You must enter an email</b>
-                        <b id="no-password-message" hidden="true" style={{color: "red"}}>You must enter a password</b>
-                        <b id="nonmatching-password-message" hidden="true" style={{color: "red"}}>Your passwords do not match</b>
+                        <b id="username-already-taken-message" hidden={true} style={{color: "red"}}>Username already taken</b>
+                        <b id="email-already-taken-message" hidden={true} style={{color: "red"}}>Email already taken</b>
+                        <b id="no-username-message" hidden={true} style={{color: "red"}}>You must enter a username</b>
+                        <b id="no-email-message" hidden={true} style={{color: "red"}}>You must enter an email</b>
+                        <b id="no-password-message" hidden={true} style={{color: "red"}}>You must enter a password</b>
+                        <b id="nonmatching-password-message" hidden={true} style={{color: "red"}}>Your passwords do not match</b>
                     </div>
                     <form id="signup-form" className="signup-form">
                         <label for="username">Username:</label><br />
@@ -141,7 +141,7 @@ export default class UserSignUpForm extends React.Component {
                     <button className="submit-button" id='submit-button' onClick={() => registrationHandler(window.document.getElementById('username').value, window.document.getElementById('password').value, window.document.getElementById('email').value, window.document.getElementById('confirm-password').value)}>SIGN UP</button>
                     <div style={{height: "100px"}} />
                 </div>
-                <div id="request-success-div" className="request-div" hidden="true">
+                <div id="request-success-div" className="request-div" hidden={true}>
                     <p id="request-success-text-field"></p>
                 </div>
             </>

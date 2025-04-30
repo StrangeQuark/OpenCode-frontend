@@ -82,8 +82,8 @@ export default class ResetPasswordSearchForm extends React.Component {
             <div id="request-div" className="request-div">
                 <h1 style={{color: "white"}}>New password</h1>
                 <div id="nonmatching-password-message-div" style={{height: "100px"}} >
-                    <b id="nonmatching-password-message" hidden="true" style={{color: "red"}}>Your passwords do not match</b>
-                    <b id="no-password-message" hidden="true" style={{color: "red"}}>You must enter a password</b>
+                    <b id="nonmatching-password-message" hidden={true} style={{color: "red"}}>Your passwords do not match</b>
+                    <b id="no-password-message" hidden={true} style={{color: "red"}}>You must enter a password</b>
                 </div>
                 <form id="request-form" className="request-form">
                     <label for="password">New password:</label><br />
@@ -97,7 +97,7 @@ export default class ResetPasswordSearchForm extends React.Component {
                 </form>
                 <button className="submit-button" id='submit-button' onClick={() => requestHandler()}>SUBMIT</button>
             </div>
-            <div id="request-success-div" className="request-div" hidden="true">
+            <div id="request-success-div" className="request-div" hidden={true}>
                 <p id="request-success-text-field"></p>
             </div>
             </>

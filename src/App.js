@@ -7,27 +7,34 @@ import Projects from './Projects';
 import Project from './Project';
 import SignUp from './SignUp';
 import Question from './Question';
-import {Route} from 'react-router-dom';
 import ResetPasswordSearch from './ResetPasswordSearch';
 import ResetPassword from './ResetPassword';
 import UserProfile from './UserProfile';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-function App() {
-  return (
-      <div className="App">
-        <Route exact path="/" component={Home}/>
-        <Route exact path="/question" component={Question}/>
-        <Route exact path="/blog" component={Blog}/>
-        <Route exact path="/about" component={About}/>
-        <Route exact path="/projects" component={Projects}/>
-        <Route exact path="/login" component={Login}/>
-        <Route exact path="/signup" component={SignUp}/>
-        <Route exact path="/password-reset" component={ResetPasswordSearch}/>
-        <Route exact path="/new-password" component={ResetPassword}/>
-        <Route exact path="/project" component={Project}/>
-        <Route exact path="/user/:id" component={(props) => <UserProfile postId={props.match.params.id} />}/>
-      </div>
-  );
+const router = createBrowserRouter(
+  [
+    { path: "/", element: <Home />},
+    { path: "/question", element: <Question />},
+    { path: "/blog", element: <Blog />},
+    { path: "/about", element: <About />},
+    { path: "/projects", element: <Projects />},
+    { path: "/login", element: <Login />},
+    { path: "/signup", element: <SignUp />},
+    { path: "/password-reset", element: <ResetPasswordSearch />},
+    { path: "/new-password", element: <ResetPassword />},
+    { path: "/project", element: <Project />},
+    { path: "/user/:id", element: <UserProfile />}
+  ],
+  {
+    future: {
+      v7_startTransition: true
+    },
+  }
+)
+
+const App = () => {
+  return <RouterProvider router={router} />
 }
 
 export default App;
